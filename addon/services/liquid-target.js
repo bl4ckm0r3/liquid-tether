@@ -1,26 +1,39 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  defaultTargets: Ember.A(),
+  targets: Ember.A(),
 
-  targets: {},
+  appendRange(context, targetName, nodes) {
+    const targets = this.get('targets');
+    let target;
 
-  appendRange(id, target, nodes) {
-    this.get(`targets.${target}`).pushObject({ id, nodes });
+    if (!(target = targets.findBy('name', targetName))) {
+      target = {
+        name: targetName,
+        items: Ember.A()
+      };
+
+      targets.pushObject(target);
+    }
+
+    Ember.run.schedule('render', () => {
+      target.items.pushObject({ context, nodes });
+    });
   },
 
-  removeRange(id, target) {
-    const targetNodes = this.get(`targets.${target}`);
-    const nodesToRemove = targetNodes.findBy('id', id);
+  removeRange(context, targetName) {
+    const targets = this.get('targets')
+    const target = targets.findBy('name', targetName);
+    const itemToRemove = target.items.findBy('context', context);
 
-    targetNodes.removeObject(nodesToRemove);
+    target.items.removeObject(itemToRemove);
+  },
+
+  removeTarget(target) {
+    this.get('targets').removeObject(target);
   },
 
   addDefaultTarget(target) {
-    const defaultTargets = this.get('defaultTargets');
-
-    if (!defaultTargets.contains(target)) {
-      defaultTargets.pushObject(target);
-    }
+    console.log('addDefaultTarget has been deprecated');
   }
 });

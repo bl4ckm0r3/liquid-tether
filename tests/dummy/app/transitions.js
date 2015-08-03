@@ -1,32 +1,39 @@
 const options = {
-  duration: 1000,
-  easing: 'easeInOutQuart'
+  duration: 1500,
+  easing: 'easeInOutQuint'
 };
 
 export default function() {
   this.transition(
-    this.hasClass('liquid-tether'),
-    this.use('tether', ['fade-up', options])
+    this.hasClass('hello-world'),
+    this.use('tether', ['to-up', options])
   );
+
+  // this.transition(
+  //   this.hasClass('liquid-tether'),
+  //   this.use('tether', ['fade-up', options])
+  // );
+  //
+  // this.transition(
+  //   this.hasClass('ui-modal'),
+  //   this.toValue((toValue) => {
+  //     return toValue.index === 0;
+  //   }),
+  //   this.use('tether', ['to-left', options], ['fade', options]),
+  //   this.reverse('tether', ['to-right', options], ['fade', options])
+  // );
+  //
+  // this.transition(
+  //   this.hasClass('ui-modal'),
+  //   this.toValue((toValue, fromValue) => {
+  //     return toValue.index > fromValue.index;
+  //   }),
+  //   this.use('tether', ['fly-to', options]),
+  //   this.reverse('tether', ['fly-to', options])
+  // );
 
   this.transition(
-    this.hasClass('ui-modal'),
-    this.toValue((toValue) => {
-      return toValue.index === 0;
-    }),
-    this.use('tether', ['to-left', options], ['fade', options]),
-    this.reverse('tether', ['to-right', options], ['fade', options]),
-    this.debug()
+    this.fromRoute(['index', 'basics']),
+    this.use('in-n-out', { duration: 500, easing: 'easeInQuart'}, { duration: 500, easing: 'easeOutQuart'})
   );
-
-  this.transition(
-    this.hasClass('ui-modal'),
-    this.toValue((toValue, fromValue) => {
-      return toValue.index > fromValue.index;
-    }),
-    this.use('tether', ['fly-to', options]),
-    this.reverse('tether', ['fly-to', options])
-  );
-
-
 }
