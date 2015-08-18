@@ -13,3 +13,84 @@
   to deal with any idiosyncratic services or APIs, and you don't have to worry
   about the peculiarities of positioning elements with CSS - It Just Works.
 </p>
+
+<h2>Usage</h2>
+
+<p>
+  Every Liquid Tether requires the following attributes:
+</p>
+
+<ul>
+  <li>
+    <strong>to</strong>: The name of the target-outlet that the
+    tether will be attached to. The target is automatically
+    instantiated and given a class which allows you to specify the
+    animations for that particular target-outlet.
+  </li>
+  <li>
+    <strong>target</strong>: The selector of the element that the
+    tether will be positioned relative to.
+  </li>
+  <li>
+    <strong>attachment</strong>: The attachment point on the tethered
+    element.
+  </li>
+  <li>
+    <strong>target-attachment</strong>: The attachment point on the
+    target element.
+  </li>
+</ul>
+
+<p>
+  The following Tether.js options have also been mapped and can be
+  passed in to Liquid Tether. Refer to the Tether.js documentation for
+  further details on their usage. Note: Some attributes have been
+  converted from camelcase to dasherized.
+</p>
+
+<ul>
+  <li><strong>class-prefix</strong></li>
+  <li><strong>target</strong></li>
+  <li><strong>attachment</strong></li>
+  <li><strong>target-attachment</strong></li>
+  <li><strong>offset</strong></li>
+  <li><strong>target-offset</strong></li>
+  <li><strong>target-modifier</strong></li>
+  <li><strong>constraints</strong></li>
+  <li><strong>optimizations</strong></li>
+</ul>
+
+<h2>Transitions</h2>
+
+<p>
+  Liquid Tether introduces the <code>tether</code> transition:
+</p>
+
+<div class="tab-content">
+  {{code-snippet name="tether-transition-signature.js"}}
+</div>
+
+<p>
+  which is a shorthand for the following <code>explode</code> transition:
+</p>
+
+<div class="tab-content">
+  {{code-snippet name="tether-transition-code.js"}}
+</div>
+
+<p>
+  While the <code>tether</code> transition should cover most standard use cases,
+  there are times when it makes sense to use <code>explode</code> directly to
+  animate tethered items. The <code>tether</code> transition receives two
+  arguments, the transition to apply to the tethered element, and the transition
+  to apply (if any) to the background overlay.
+</p>
+
+<h2>Styles</h2>
+
+<p>
+  If you want to style specific instances of tethered elements you can apply
+  a class directly to the tether itself. This class will be applied to the
+  liquid-target that the element is attached to, when the element is active.
+  This style won't 
+</p>

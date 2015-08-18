@@ -22,7 +22,7 @@ export default Ember.Service.extend({
   },
 
   removeRange(context, targetName) {
-    const targets = this.get('targets')
+    const targets = this.get('targets');
     const target = targets.findBy('name', targetName);
     const itemToRemove = target.items.findBy('context', context);
 
@@ -33,7 +33,7 @@ export default Ember.Service.extend({
     this.get('targets').removeObject(target);
   },
 
-  addDefaultTarget(target) {
+  addDefaultTarget() {
     console.log('addDefaultTarget has been deprecated');
   }
 });

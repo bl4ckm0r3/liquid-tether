@@ -1,10 +1,12 @@
 @import 'bootstrap';
 @import 'modals';
 @import 'popovers';
+@import 'tabs';
 
 a {
   transition: color 0.25s;
   -webkit-transition: color 0.25s;
+  cursor: pointer;
 }
 
 body {
@@ -52,6 +54,12 @@ h2 {
   margin-top: 0;
 }
 
+pre, pre.hljs {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
 .popover {
   display: block;
   position: relative;
@@ -73,10 +81,12 @@ h2 {
 }
 
 .hello-world-container {
-  margin: 0 40px;
+  margin: 40px;
 
-  #hello-world {
-    margin: 100px 0;
+  &.frontpage {
+    #hello-world {
+      margin: 60px 0;
+    }
   }
 }
 

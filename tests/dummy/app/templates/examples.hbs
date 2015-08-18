@@ -1,0 +1,43 @@
+<h1>Examples</h1>
+
+<p>
+  Below is the basic Hello World example seen on the front page. The template
+  code is embedded directly in the context of this page, hidden from us by a
+  simple <code>if</code> statement. Toggling the dependent property for that
+  <code>if</code> inserts the element into the DOM, which triggers the
+  animation.
+</p>
+
+<div class="hello-world-container">
+  <button {{action 'toggleHello'}} id="hello-world" class="btn btn-primary btn-embossed">
+    Hello, World!
+  </button>
+
+  {{#if showHello}}
+    {{#liquid-tether
+      to="hello-world"
+      target="#hello-world"
+      attachment="middle left"
+      target-attachment="middle right"
+    }}
+      <div id="hello-world-popover" class="popover right">
+        <div class="arrow"></div>
+        <div class="popover-title">
+          Hello!
+        </div>
+      </div>
+    {{/liquid-tether}}
+  {{/if}}
+</div>
+
+{{#example-pane}}
+  <div class="template">
+    {{code-snippet name="hello-world.hbs"}}
+  </div>
+  <div class="js">
+    {{code-snippet name="hello-world.js"}}
+  </div>
+  <div class="transitions">
+    {{code-snippet name="hello-world-transitions.js"}}
+  </div>
+{{/example-pane}}

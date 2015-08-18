@@ -33,7 +33,7 @@ export default function() {
   // );
 
   this.transition(
-    this.fromRoute(['index', 'basics']),
+    this.fromRoute(['index', 'basics', 'examples']),
     this.use('in-n-out', { duration: 500, easing: 'easeInQuart'}, { duration: 500, easing: 'easeOutQuart'})
   );
 }

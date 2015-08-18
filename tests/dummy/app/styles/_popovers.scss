@@ -53,6 +53,7 @@
 
 // Popover Title
 .popover-title {
+  position: relative;
   background-color: mix($brand-primary, white, 1%);
   color: $text-color;
   font-size: $component-font-size-base;

@@ -36,7 +36,8 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-try": "0.0.6",
-    "liquid-fire": "0.21.0"
+    "liquid-fire": "0.21.0",
+    "ui-tabs": "git://github.com/firefly-ui/ui-tabs.git#a1badb59d4905eff307256d38dd8ef7db4a44f2d"
   },
   "keywords": [
     "ember-addon"

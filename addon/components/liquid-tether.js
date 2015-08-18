@@ -48,7 +48,7 @@ export default LiquidWormhole.extend({
     'target-modifier',
     'constraints',
     'optimizations',
-    'liquidTargetName',
+    'liquidTarget',
     function() {
       this.removeTether(this._tether);
       this.addTether();
