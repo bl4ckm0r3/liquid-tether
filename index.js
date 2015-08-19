@@ -5,6 +5,8 @@ module.exports = {
   name: 'liquid-tether',
 
   included: function(app) {
+    this._super.included(app);
+
     if (app.import) {
       this.importBowerDependencies(app);
     }

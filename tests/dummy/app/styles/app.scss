@@ -93,3 +93,11 @@ pre, pre.hljs {
 #hello-world-popover {
   max-width: 430px;
 }
+
+.liquid-tether-element {
+  position: absolute;
+}
+
+.liquid-target-container * {
+  z-index: 9999;
+}

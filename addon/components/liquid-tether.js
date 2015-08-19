@@ -27,6 +27,10 @@ export default LiquidWormhole.extend({
     this._super();
 
     this.addTether();
+
+    run.schedule('render', () => {
+      this._tether.position();
+    });
   },
 
   willDestroyElement() {
