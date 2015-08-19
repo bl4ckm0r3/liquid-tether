@@ -1,0 +1,7 @@
+.liquid-tether-element {
+  position: absolute;
+}
+
+.liquid-target-container * {
+  z-index: 9999;
+}
